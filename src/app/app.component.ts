@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'quick-link-test';
+
+  navLinks = [{
+    routerLink: '/first',
+    title: 'first',
+    subitems: [{
+      routerLink: '/first/second',
+      title: 'second',
+    }]
+  }];
+
 }
