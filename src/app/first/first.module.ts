@@ -10,18 +10,24 @@ import { FirstComponent } from './first.component';
     RouterModule.forChild([{
       path: '',
       component: FirstComponent,
-      children: [{
-        path: '',
-        redirectTo: 'second',
-      },
-      {
-        path: 'second',
-        loadChildren: () => import('../second/second.module').then(m => m.SecondModule),
-      }
-    ]
+      children: [
+        {
+          path: '',
+          redirectTo: 'second',
+        },
+        {
+          path: 'second',
+          loadChildren: () => import('../second/second.module').then(m => m.SecondModule),
+        }
+      ]
     }]),
     SharedModule,
   ],
-  declarations: []
+  exports: [
+    RouterModule,
+  ],
+  declarations: [
+    FirstComponent
+  ]
 })
 export class FirstModule { }
