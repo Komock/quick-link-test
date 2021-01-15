@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve --port=1465",
     "build": "ng build",
+    "publish:demo": "npx angular-cli-ghpages --dir=./dist/quick-link-test",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

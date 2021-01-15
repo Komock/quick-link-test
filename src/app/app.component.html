@@ -1,15 +1,27 @@
 <nav>
   <ul>
     <li>
-      <a [routerLink]="[ '/' ]">Home</a>
+      <a
+        [routerLink]="[ '/' ]"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >Home</a>
     </li>
     <li
       *ngFor="let item of navLinks"
     >
-      <a [routerLink]="[ item.routerLink ]">{{ item.title }}</a>
+      <a
+        [routerLink]="[ item.routerLink ]"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: item.notExact ? false : true }"
+      >{{ item.title }}</a>
       <ul *ngIf="item.subitems">
         <li *ngFor="let subItem of item.subitems">
-          <a [routerLink]="[ subItem.routerLink ]">{{ subItem.title }}</a>
+          <a
+            [routerLink]="[ subItem.routerLink ]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: subItem.notExact ? false : true }"
+          >{{ subItem.title }}</a>
         </li>
       </ul>
     </li>
